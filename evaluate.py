@@ -139,6 +139,8 @@ def evaluate(K: int, model_path: str, snr_list, use_sample_cov: bool):
 # ---------------------------------------------------------------------------
 
 def main():
+    global N_TEST_PER_SNR  # must be declared before any use within this function
+
     parser = argparse.ArgumentParser(
         description='Evaluate the trained TS-MLP 2D DOA model.')
     parser.add_argument('--K', type=int, required=True, choices=[2, 3, 4])
@@ -157,7 +159,6 @@ def main():
         print(f"ERROR: model file not found: {args.model}")
         sys.exit(1)
 
-    global N_TEST_PER_SNR
     N_TEST_PER_SNR = args.n_test
 
     evaluate(args.K, args.model, args.snr_list, args.use_sample_cov)
