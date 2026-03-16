@@ -1,0 +1,23 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Datasets (large generated files)
+datasets/
+*.h5
+*.hdf5
+
+# Trained model checkpoints
+models_saved/
+*.weights.h5
+
+# NumPy / misc outputs
+*.npy
+*.npz
+
+# Editor and OS artefacts
+.DS_Store
+*.swp
+*.swo
