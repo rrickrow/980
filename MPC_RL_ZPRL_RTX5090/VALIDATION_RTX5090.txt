@@ -1,0 +1,16 @@
+RTX 5090 CODE VALIDATION
+========================
+
+Static/syntax validation:
+  python -m compileall -q mpcrl experiments tests scripts/check_rtx5090.py
+  PASS
+
+Unit tests:
+  python -m unittest discover -s tests -v
+  6 tests passed
+
+RTX 5090 runtime validation:
+  Not executed in the artifact-building environment because an RTX 5090/CUDA runtime is not attached.
+  Run on the target machine:
+      python scripts/check_rtx5090.py
+      bash scripts/run_rtx5090_smoke.sh
